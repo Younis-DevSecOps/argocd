@@ -5,7 +5,7 @@ metadata:
     app: swiggy
   name: swiggy-deploy
 spec:
-  replicas: 5
+  replicas: 8
   selector:
     matchLabels:
       app: swiggy
@@ -18,7 +18,7 @@ spec:
       - name: cont1
         image: rahamshaik/zomatoproject:myzomatoimage
         ports:
-          - containerPort: 3000
+          - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -29,4 +29,4 @@ spec:
   selector:
     app: swiggy
   ports:
-    - port: 3000
+    - port: 80
